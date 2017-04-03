@@ -1,8 +1,13 @@
-name := "sbt-bootstrap"
+// Dependencies
+val scalaTest = "org.scalatest" %% "scalatest" % "3.0.1"
 
-version := "1.0"
+lazy val root = (project in file(".")).
+  settings(
+    name := "sbt-bootstrap",
+    version := "1.0",
+    scalaVersion := "2.12.1",
 
-scalaVersion := "2.10.3"
-
-libraryDependencies += "org.scalatest" % "scalatest_2.10" % "2.0" % "test"
-
+    libraryDependencies ++= Seq(
+      scalaTest
+    )
+  )
